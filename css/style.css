@@ -1,0 +1,62 @@
+html, body{
+	margin: 5px;
+}
+
+body{
+	background-color: #aad3df60;
+}
+
+#main_head{
+	text-align: center;
+	text-justify: newspaper;
+}
+
+#ISSmap {
+	margin-top: 2%;
+	height: 70%;
+	padding: 2%;
+}
+
+#data{
+	margin: 1%;
+}
+
+.da{
+	text-align: center;
+	font-size: 18px;
+}
+
+#r1{
+	display: inline-block;
+	width: 45%;
+	text-align: center;
+}
+
+#r2{
+	display: inline-block;
+	width: 45%;
+	text-align: center;
+}
+
+.title{
+	font-size: 15px;
+	font-weight: 700;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0pt;
+	left: 0pt;
+	background-color: #84c7ee42;
+}
+
+.footer_contents {
+	text-align: center;
+	font-size: 120%;
+	font-weight: bolder;
+	color: #292d33fa;
+	text-align: center;
+	justify-content: center;
+}
