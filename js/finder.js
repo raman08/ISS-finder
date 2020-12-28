@@ -43,7 +43,7 @@ function getISS() {
 		.then(json => setData(json))
 		.catch(err => {
 			alert("Sorry! Something Went Wrong");
-			console.log(err)
+			console.log(err);
 		});
 
 }
