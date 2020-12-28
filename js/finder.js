@@ -22,16 +22,16 @@ var marker = L.marker([0, 0], { icon: ISSicon }).addTo(mymap);
 
 // Function to set data in HTML
 function setData(json) {
-	let lat = json.latitude;
-	let long = json.longitude;
-	let alt = json.altitude;
-	let vel = json.velocity;
+	let lat = json.latitude || 0;
+	let long = json.longitude || 0;
+	let alt = json.altitude || 0;
+	let vel = json.velocity || 0;
 
 	mymap.setView([lat, long], mymap.getZoom());
 	marker.setLatLng([lat, long]);
 
-	document.getElementById('lat').textContent = Number.parseFloat(lat).toFixed(2);
-	document.getElementById('long').textContent = Number.parseFloat(long).toFixed(2);
+	document.getElementById('lat').textContent = Math.abs(Number.parseFloat(lat).toFixed(2)) + '° South';
+	document.getElementById('long').textContent = Math.abs(Number.parseFloat(long).toFixed(2)) + '° West';
 	document.getElementById('alt').textContent = Number.parseFloat(alt).toFixed(2) + ' km';
 	document.getElementById('vel').textContent = Number.parseFloat(vel).toFixed(2) + ' km/h';
 }
@@ -40,7 +40,11 @@ function setData(json) {
 function getISS() {
 	fetch(api_URL)
 		.then(responce => responce.json())
-		.then(json => setData(json));
+		.then(json => setData(json))
+		.catch(err => {
+			alert("Sorry! Something Went Wrong");
+			console.log(err)
+		});
 
 }
 getISS();
